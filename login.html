@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Firebase App</title>
+    <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript for Web -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="launch.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="watchdog.css">
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAlhZDdnZPf3-s6Q_Jdtits1LscYf9RjLc",
+    authDomain: "watchdog-32edb.firebaseapp.com",
+    databaseURL: "https://watchdog-32edb.firebaseio.com",
+    storageBucket: "watchdog-32edb.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        'signInSuccessUrl': 'ViewId.html',
+        'signInOptions': [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        /*  firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+          firebase.auth.GithubAuthProvider.PROVIDER_ID, */
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ],
+        // Terms of service url.
+        'tosUrl': '<your-tos-url>',
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+  </head>
+  <body>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+         <div class="row">
+           <div class="col m2 l2 hide-on-small-only">
+
+           </div>
+           <div class="col m8 l8 s12 offset-m2 offset-l2 center-align mid">
+             <h1 class="title" style="font-size: 100px; opacity: 0"><img src="logo.png" alt="Mountain View" style="width:120px;height:120px;"></h1>
+             <h1 class="title" style="font-size: 70px; opacity: 0">Watchdog</h1>
+             <h4 class="sub" style="font-size: 25px; opacity: 0">Making communities safer</h4>
+             <h4 class="para" style="opacity: 0">–</h4>
+             <!--<p class="para" style="opacity: 0">
+               We believe that community safetly can only manifest itself if the community works together.
+               That is why we created Savior, a way for people to build a safer community.
+               Savior is an app that lets you travel safely at night, or any time of the day. Summoning a savior
+               calls a trained and certified walking companion to your location. Our app and map gives travel times for your
+                 nearest savior. In pressing situations, pressing the circular alert button broadcasts an alert to nearby saviors.
+                 Our android application also collects video and audio footage of the incident to record what happens. Anyone
+                 with a First Aid certification can volunteer their time to make communities safer, one savior at a time.
+             </p>-->
+            <!-- <a class="para" href="map.html" style="opacity: 0">Take me to the map</a> -->
+           </div>
+           <div class="col m2 l2 hide-on-small-only">
+
+           </div>
+    <div id="firebaseui-auth-container"></div>
+  </body>
+</html>
