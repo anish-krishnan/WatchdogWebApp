@@ -1,0 +1,34 @@
+.sidebar {
+  height: 91vh;
+  background-color: #000000;
+}
+
+.map {
+  height: 91vh;
+}
+
+.body {
+  margin-bottom: 0px;
+}
+
+html {
+  max-height: 100vh;
+}
+
+a:hover {
+  color: black;
+}
+
+input {
+  color: white;
+}
+
+.body a {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.alert {
+  margin: auto;
+
+}

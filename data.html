@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Watchdog</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="data.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="data.css">
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body class="grey lighten-5">
+    <nav class="black darken-4">
+      <div class="nav-wrapper container">
+        <a href="data.html#" class="brand-logo">Watchdog</a>
+      </div>
+    </nav>
+    <div class="container" ng-app="app" ng-controller="ctrl" ng-init="data = []">
+      <a href="map.html" id="back"><i class="material-icons">navigation</i> back to map</a>
+      <h1>Alert Data</h1>
+      <a class="btn" ng-click="compile()">Compile Data</a>
+      <table>
+        <thead>
+          <tr>
+            <th data-field="date">Date</th>
+              <th data-field="time">Time</th>
+              <th data-field="latitude">Latitude</th>
+              <th data-field="longitude">Longitude</th>
+              <th data-field="data">Data</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="x in data">
+            <td>
+              7/16/2016
+            </td>
+            <td>
+              {{x.time}}
+            </td>
+            <td>
+              Latitude: {{x.lat}}
+            </td>
+            <td>
+              Longitude: {{x.lon}}
+            </td>
+            <td>
+              <i class="material-icons">perm_camera_mic</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

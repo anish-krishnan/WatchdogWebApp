@@ -1,0 +1,9 @@
+.mid {
+  margin-top: 40px;
+  color: white;
+}
+
+html {
+  background-image: url(background.png);
+  background-size: cover;
+}
